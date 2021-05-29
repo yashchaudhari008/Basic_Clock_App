@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Clock Project</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <link rel="shortcut icon" type="image/png" href="favicon.png">
+    </head>
+
+    <body>
+        <div id="buttonHolder">
+            <button onclick="unhide('clock')">Clock</button>
+            <button onclick="unhide('stopwatch')">Stopwatch</button>
+            <button onclick="unhide('alarm')">Alarm</button>
+        </div>
+
+        <div>
+            <div id="clock" class="container">
+                <p>Current Time</p>
+                <div class="box">
+                    <div id="clkH">10</div>:
+                    <div id="clkM">20</div>:
+                    <div id="clkS">30</div>
+                </div>
+            </div>
+
+            <div id="stopwatch" class="container hide">
+                <div class="box">
+                    <div id="swH">00</div>:
+                    <div id="swM">00</div>:
+                    <div id="swS">00</div>
+                </div>
+                <br>
+                <button id="startSW">START</button>
+                <button id="stopSW" class="hide">STOP</button>
+                <button id="resetSW" class="hide">RESET</button>
+            </div>
+
+            <div id="alarm" class="container hide">
+                <p>Set Alarm</p>
+                <div class="box">
+                    <input id="alarmTime" type="time"/>
+                </div>
+                <br>
+                <button id="setA" >SET</button>
+                <button id="cancelA" class="hide">CANCEL</button>
+            </div>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>
