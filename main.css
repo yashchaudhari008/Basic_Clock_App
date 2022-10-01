@@ -26,6 +26,7 @@ button {
     padding-inline: 20px;
     outline: none;
     border: 5px solid black;
+    cursor: pointer;
 
     text-align: center;
     font-family: monospace;
