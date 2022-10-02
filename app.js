@@ -90,7 +90,7 @@ resetSWBTN.onclick = () => {
 const alarmTime = document.getElementById('alarmTime');
 const setABTN = document.getElementById('setA');
 const cancelABTN = document.getElementById('cancelA');
-
+const stopABTN = document.getElementById('stopA')
 let alarm = null;//Reference to alarm's setInterval
 let alarmSound = new Audio('alarm.mp3');
 
@@ -100,9 +100,16 @@ function isTimeToRing(){
     if (clkH.innerHTML == atime[0] && clkM.innerHTML == atime[1]){
         console.log("RINGING");
         clearInterval(alarm); //stop checking thereafter
+        
         cancelABTN.click();
+        stopABTN.classList.toggle('hide');
         alarmSound.play(); 
+        
     }
+}
+stopABTN.onclick = () => {
+    alarmSound.pause();
+    stopABTN.classList.toggle('hide')
 }
 
 setABTN.onclick = () => {
@@ -120,9 +127,9 @@ cancelABTN.onclick = () => {
     //reset alarm
     alarmTime.readOnly = false;
     alarmTime.value = '';
-
     cancelABTN.classList.toggle('hide');
     setABTN.classList.toggle('hide');
+    
 }
 //----------------------------------------------------------------
 
